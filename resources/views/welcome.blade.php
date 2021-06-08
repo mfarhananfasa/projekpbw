@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ url('welcome') }}">Home</a>
+              <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('pasien') }}">Pasien</a>
@@ -39,7 +39,8 @@
             <li></li>
           </ul>
         </div>
-        <button type="button" class="btn btn-success float-end shadow">Login</button>
+        <button type="button" href="#" class="btn btn-success float-end shadow">Login</button>
+        <button type="button" href="#" class="btn btn-success float-end shadow">Sign Up</button>
       </div>
     </nav>
     <!-- Navbar end -->
@@ -56,7 +57,7 @@
         </div>
       </div>
     </section>
-    <!-- End home -->
+   <!-- End home -->
 
     <!-- ======= Footer ======= -->
     <footer>

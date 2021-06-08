@@ -13,6 +13,7 @@
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
 
   <!-- my css -->
   <link rel="stylesheet" type="text/css" href="{{asset('dokter/css/style.css')}}" />
@@ -28,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('welcome') }}">Home</a>
+              <a class="nav-link" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('pasien') }}">Pasien</a>
@@ -43,7 +44,7 @@
       </div>
     </nav>
     <!-- Navbar end -->
-
+    
     <!-- dokter -->
     <div id="dokter">
       <div class="container">
