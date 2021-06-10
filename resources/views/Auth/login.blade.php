@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <button type="button" class="btn btn-block login" onclick="document.location='home.html'">Login</button>
-                <div class="signup">Tidak memiliki akun? <a href="signup.html">Buat akun</a></div>
+                <div class="signup">Tidak memiliki akun? <a href="{{ url('register') }}">Buat akun</a></div>
             </div>
         </form>
     </div>

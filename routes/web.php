@@ -22,11 +22,7 @@ Route::get('home', function () {
 });
 
 Route::get('dok', function () {
-    return view('dok');
-});
-
-Route::get('main', function () {
-    return view('main');
+    return view('dokter');
 });
 
 Route::get('pasien', function () {
