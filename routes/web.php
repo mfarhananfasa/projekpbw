@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,29 +15,43 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+     return view('Auth.login');
+ });
 
-Route::get('home', function () {
-    return view('home');
-});
+<<<<<<< Updated upstream
+Route::get('welcome', [UserAuthController::class, 'welcome'])->middleware('isLogged');
+
+Route::get('dok', function () {
+    return view('dokter');
+=======
 
 Route::get('dok', function () {
     return view('dok');
-});
-
-Route::get('main', function () {
-    return view('main');
+>>>>>>> Stashed changes
 });
 
 Route::get('pasien', function () {
     return view('pasien');
 });
 
-Route::get('login', function () {
-    return view('Auth.login');
-});
+Route::get('login', [UserAuthController::class, 'login'])->middleware('AlreadyLoggedIn');
 
+Route::get('register', [UserAuthController::class, 'register'])->middleware('AlreadyLoggedIn');
+
+Route::get('logout', [UserAuthController::class, 'logout']);
+
+Route::post('create', [UserAuthController::class, 'create'])->name('auth.create');
+
+Route::post('check', [UserAuthController::class, 'check'])->name('auth.check');
+
+
+<<<<<<< Updated upstream
+=======
 Route::get('register', function () {
     return view('Auth.register');
 });
+
+Route::get('dashboard', function () {
+    return view('dashboard');
+});
+>>>>>>> Stashed changes
