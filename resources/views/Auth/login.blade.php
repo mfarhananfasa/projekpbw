@@ -19,18 +19,21 @@
   </head>
   <body>
     <div class="registration-form">
-        <form>
+        <form action="{{ route('auth.check') }}" method="post">
+        @csrf
             <div class="form-icon">
                 <span><i class="icon icon-user"></i></span>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control item" id="email" placeholder="Username" />
+                <input type="text" class="form-control item" name="username" id="username" placeholder="Username" value="{{ old('username') }}" />
+                <span class="text-danger">@error('username'){{ $message }} @enderror</span>
             </div>
             <div class="form-group">
-                <input type="password" class="form-control item" id="password" placeholder="Password" />
+                <input type="password" class="form-control item" name="password" id="password" placeholder="Password" />
+                <span class="text-danger">@error('password'){{ $message }} @enderror</span>
             </div>
             <div class="form-group">
-                <button type="button" class="btn btn-block login" onclick="document.location='home.html'">Login</button>
+                <button type="submit" class="btn btn-block login">Login</button>
                 <div class="signup">Tidak memiliki akun? <a href="{{ url('register') }}">Buat akun</a></div>
             </div>
         </form>

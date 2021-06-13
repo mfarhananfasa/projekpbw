@@ -43,6 +43,7 @@
             <li></li>
         </ul>
         </div>
+        <a href="{{ url('logout') }}" class="btn btn-danger float-end shadow">Logout</a>
         <a href="{{ url('login') }}" class="btn btn-success float-end shadow">Login</a>
         <a href="{{ url('register') }}" class="btn btn-success float-end shadow">Sign Up</a>
     </div>

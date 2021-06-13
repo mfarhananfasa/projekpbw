@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('home', function () {
-    return view('home');
-});
+Route::get('welcome', [UserAuthController::class, 'welcome'])->middleware('isLogged');
 
 Route::get('dok', function () {
     return view('dokter');
@@ -29,10 +28,14 @@ Route::get('pasien', function () {
     return view('pasien');
 });
 
-Route::get('login', function () {
-    return view('Auth.login');
-});
+Route::get('login', [UserAuthController::class, 'login'])->middleware('AlreadyLoggedIn');
 
-Route::get('register', function () {
-    return view('Auth.register');
-});
+Route::get('register', [UserAuthController::class, 'register'])->middleware('AlreadyLoggedIn');
+
+Route::get('logout', [UserAuthController::class, 'logout']);
+
+Route::post('create', [UserAuthController::class, 'create'])->name('auth.create');
+
+Route::post('check', [UserAuthController::class, 'check'])->name('auth.check');
+
+
