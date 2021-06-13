@@ -14,27 +14,55 @@
 </head>
 <body>
     <div class="registration-form">
-        <form>
+        <form action="{{ route('auth.create') }}" method="post">
+        @csrf
+            <div class="result">
+                @if(Session::get('success'))
+                    <div class="alert alert-success">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
+
+                @if(Session::get('fail'))
+                    <div class="alert alert-danger">
+                        {{ Session::get('fail') }}
+                    </div>
+                @endif
+            </div>
             <div class="form-icon">
                 <span><i class="icon icon-user"></i></span>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control item" id="username" placeholder="Username">
+                <input type="text" class="form-control item" name="username" id="username" placeholder="Username" value="{{ old('username')}}">
+                <span class="text-danger">@error('username'){{ $message }} @enderror</span>
             </div>
             <div class="form-group">
-                <input type="password" class="form-control item" id="password" placeholder="Password">
+                <input type="password" class="form-control item" name="password" id="password" placeholder="Password">
+                <span class="text-danger">@error('password'){{ $message }} @enderror</span>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control item" id="name" placeholder="Nama">
+                <input type="text" class="form-control item" name="nama" id="nama" placeholder="Nama" value="{{ old('nama')}}">
+                <span class="text-danger">@error('nama'){{ $message }} @enderror</span>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control item" id="umur" placeholder="Umur">
+                <input type="text" class="form-control item" name="umur" id="umur" placeholder="Umur" onkeypress="return hanyaAngka(event)" value="{{ old('umur')}}">
+                <span class="text-danger">@error('umur'){{ $message }} @enderror</span>
+            </div>
+            <script>
+                function hanyaAngka(event){
+                var angka = (event.which) ? event.which : event.keyCode
+                if (angka != 46 && angka > 31 && (angka < 48 || angka > 57)){
+                    return false;
+                }
+                return true;
+            }
+            </script>
+            <div class="form-group">
+                <input type="text" class="form-control item" name="alamat" id="alamat" placeholder="Alamat" value="{{ old('alamat')}}">
+                <span class="text-danger">@error('alamat'){{ $message }} @enderror</span>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control item" id="alamat" placeholder="Alamat">
-            </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-block create-account" onclick="document.location='index.html'">Create Account</button>
+                <button type="submit" class="btn btn-block create-account">Create Account</button>
                 <div class="signup">Sudah punya akun? <a href="{{ url('login') }}">Login</a></div>
             </div>
         </form>
