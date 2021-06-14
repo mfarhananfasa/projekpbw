@@ -8,8 +8,13 @@
             <div class="col-xl-6">
             <h1>websites Praktek Dokter</h1>
             <h2>Website untuk mengatur jadwal temu dengan dokter</h2>
-            
-            <a href="{{ url('pasien') }}" class="btn-get-started">Atur jadwal</a>
+
+            @auth
+                <a href="{{ url('pasien') }}" class="btn-get-started">Atur jadwal</a>
+            @endauth
+            @guest
+            <a href="{{ url('register') }}" class="btn-get-started btn-primary">Buat Akun</a>
+            @endguest
             </div>
 
             <div class="col-xl-6 .ms-auto">
@@ -39,7 +44,7 @@
 
                     <tr>
                     <th scope="row">3</th>
-                    <td>...</td>  
+                    <td>...</td>
                     <td>...</td>
                     </tr>
 
@@ -47,7 +52,7 @@
                 </div>
             </table>
             </div>
-            
+
         </div>
         </div>
     </section>
