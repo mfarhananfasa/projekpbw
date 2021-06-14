@@ -27,27 +27,33 @@
     <!-- Navbar start -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: linear-gradient(#1aa4b8, #1a84b8)">
     <div class="container-fluid">
-        <a class="navbar-brand" href="welcome">Praktek Dokter</a>
+        <a class="navbar-brand" href="/">Praktek Dokter</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url('welcome') }}">Home</a>
+            <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
             </li>
+            @auth
             <li class="nav-item">
-            <a class="nav-link" href="{{ url('pasien') }}">Pasien</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{ url('dok') }}">Info dokter</a>
-            </li>
+                <a class="nav-link" href="{{ url('pasien') }}">Pasien</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{{ url('dok') }}">Info dokter</a>
+                </li>
+            @endauth
             <li></li>
         </ul>
         </div>
-         <a href="{{ url('logout') }}" class="btn btn-danger float-end shadow">Logout</a>
-        <!--<a href="{{ url('login') }}" class="btn btn-success float-end shadow">Login</a>
-        <a href="{{ url('register') }}" class="btn btn-success float-end shadow">Sign Up</a> -->
+        @auth
+            <a href="{{ url('logout') }}" class="btn btn-danger float-end shadow">Logout</a>
+        @endauth
+        @guest
+            <a href="{{ url('login') }}" class="btn btn-primary float-end shadow me-2">Login</a>
+            <a href="{{ url('register') }}" class="btn btn-secondary float-end shadow">Sign Up</a>
+        @endguest
     </div>
     </nav>
     <!-- Navbar end -->

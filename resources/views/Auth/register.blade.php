@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('dokter/css/template.css')}}">
     <link rel="stylesheet" href="{{asset('dokter/css/login.css')}}" />
+    <link rel="stylesheet" href="{{asset('dokter/css/style.css')}}" />
+
 </head>
 <body>
     <div class="registration-form">
-        <form action="{{ route('auth.create') }}" method="post">
+        <form class="mb-5" action="{{ route('auth.create') }}" method="post">
         @csrf
             <div class="result">
                 @if(Session::get('success'))
