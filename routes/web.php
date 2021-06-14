@@ -18,16 +18,10 @@ Route::get('/', function () {
      return view('Auth.login');
  });
 
-<<<<<<< Updated upstream
 Route::get('welcome', [UserAuthController::class, 'welcome'])->middleware('isLogged');
 
 Route::get('dok', function () {
     return view('dokter');
-=======
-
-Route::get('dok', function () {
-    return view('dok');
->>>>>>> Stashed changes
 });
 
 Route::get('pasien', function () {
@@ -45,13 +39,3 @@ Route::post('create', [UserAuthController::class, 'create'])->name('auth.create'
 Route::post('check', [UserAuthController::class, 'check'])->name('auth.check');
 
 
-<<<<<<< Updated upstream
-=======
-Route::get('register', function () {
-    return view('Auth.register');
-});
-
-Route::get('dashboard', function () {
-    return view('dashboard');
-});
->>>>>>> Stashed changes
