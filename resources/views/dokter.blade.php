@@ -2,7 +2,6 @@
 @section('title','Info Dokter')
 
 @section('isi')
-    
     <div id="dokter">
     <div class="container">
         <div class="row">
@@ -17,6 +16,7 @@
             <div class="card-body">
                 <h5 class="card-title"><b>dr. Edwin Ongkorahardjo</b></h5>
                 <p class="card-text">dr. Edwin Ongkorahardjo adalah seorang Dokter Spesialis neurologi.</p>
+
 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -40,7 +40,6 @@
                     </div>
                     </div>
                 </div>
-
             </div>
             </div>
         </div>

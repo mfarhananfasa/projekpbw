@@ -8,6 +8,7 @@
             <div class="col-xl-6">
             <h1>websites Praktek Dokter</h1>
             <h2>Website untuk mengatur jadwal temu dengan dokter</h2>
+            
             <a href="{{ url('pasien') }}" class="btn-get-started">Atur jadwal</a>
             </div>
 
@@ -46,7 +47,7 @@
                 </div>
             </table>
             </div>
-
+            
         </div>
         </div>
     </section>
