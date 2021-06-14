@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
     <!-- Vendor CSS Files -->
     <link href="{{asset('dokter/assets/vendor/aos/aos.css')}}" rel="stylesheet" />
@@ -25,14 +27,14 @@
     <!-- Navbar start -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: linear-gradient(#1aa4b8, #1a84b8)">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Praktek Dokter</a>
+        <a class="navbar-brand" href="welcome">Praktek Dokter</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
+            <a class="nav-link active" aria-current="page" href="{{ url('welcome') }}">Home</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="{{ url('pasien') }}">Pasien</a>
@@ -43,9 +45,9 @@
             <li></li>
         </ul>
         </div>
-        <a href="{{ url('logout') }}" class="btn btn-danger float-end shadow">Logout</a>
-        <a href="{{ url('login') }}" class="btn btn-success float-end shadow">Login</a>
-        <a href="{{ url('register') }}" class="btn btn-success float-end shadow">Sign Up</a>
+         <a href="{{ url('logout') }}" class="btn btn-danger float-end shadow">Logout</a>
+        <!--<a href="{{ url('login') }}" class="btn btn-success float-end shadow">Login</a>
+        <a href="{{ url('register') }}" class="btn btn-success float-end shadow">Sign Up</a> -->
     </div>
     </nav>
     <!-- Navbar end -->
@@ -71,5 +73,9 @@
     <script src="{{asset('dokter/assets/js/main.js')}}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- CSS -->
+  <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" /> -->
+
 </body>
 </html>

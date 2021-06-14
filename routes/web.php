@@ -14,9 +14,11 @@ use App\Http\Controllers\UserAuthController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
+Route::get('/', function () {
+     return view('Auth.login');
+ });
+
 
 Route::get('welcome', [UserAuthController::class, 'welcome'])->middleware('isLogged');
 
