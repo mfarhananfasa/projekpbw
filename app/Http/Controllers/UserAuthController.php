@@ -84,7 +84,7 @@ class UserAuthController extends Controller
         return view('/');
     }
 
-    function logout(){
+    public function logout(){
         Auth::logout();
 
         if(session()->has('LoggedUser')){

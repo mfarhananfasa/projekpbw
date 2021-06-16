@@ -34,7 +34,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
+            <a class="nav-link" href="{{ url('/') }}">Home</a>
             </li>
             @auth
             <li class="nav-item">
@@ -48,7 +48,10 @@
         </ul>
         </div>
         @auth
-            <a href="{{ url('logout') }}" class="btn btn-danger float-end shadow">Logout</a>
+            <form action="logout" method="post">
+                @csrf
+                <button type="submit" class="btn btn-danger float-end shadow">Logout</button>
+            </form>
         @endauth
         @guest
             <a href="{{ url('login') }}" class="btn btn-primary float-end shadow me-2">Login</a>

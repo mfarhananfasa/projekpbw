@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('nama');
             $table->string('umur');
             $table->string('alamat');
+            $table->integer('id_times')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
