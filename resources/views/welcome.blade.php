@@ -30,24 +30,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>...</td>
-                    <td>...</td>
-                    </tr>
+                    @forelse ($times as $time)
+                        @if ($time->id_users > 0)
+                            @forelse ($data as $pasien)
+                                @if ( $pasien->id == $time->id_users )
+                                    <tr>
+                                        <th scope="row">{{ $time->id}}</th>
+                                        <td>{{ $pasien->nama }}</td>
+                                        <td>{{ $time->waktu }}</td>
+                                    </tr>
+                                @endif
+                            @empty
 
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>...</td>
-                    <td>...</td>
-                    </tr>
-
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>...</td>
-                    <td>...</td>
-                    </tr>
-
+                            @endforelse
+                        @else
+                            <tr>
+                                <th scope="row">{{ $time->id}}</th>
+                                <td>-</td>
+                                <td>{{ $time->waktu }}</td>
+                            </tr>
+                        @endif
+                    @empty
+                        <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    @endforelse
                 </tbody>
                 </div>
             </table>

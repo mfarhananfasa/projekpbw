@@ -31,6 +31,7 @@ Route::group(['middleware' => 'AlreadyLoggedIn'], function(){
 Route::group(['middleware' => 'isLogged'], function(){
     Route::get('dok', [DokterController::class, 'index']);
     Route::get('pasien', [PasienController::class, 'index']);
-    Route::get('logout', [UserAuthController::class, 'logout']);
+    Route::post('booking', [PasienController::class, 'booking']);
+    Route::post('logout', [UserAuthController::class, 'logout']);
 });
 
