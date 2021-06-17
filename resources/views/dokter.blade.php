@@ -19,10 +19,10 @@
 
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn shadow" style="background-color: #3CADFF; color: white" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Detail
                 </button>
-                
+
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -32,10 +32,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            Layanan kesehatan yang dapat beliau berikan berupa konsultasi penyakit dan gangguan saraf. Jam Layanan <b>Senin-Kamis Pukul 09.00-11.00
+                            Layanan kesehatan yang dapat beliau berikan berupa konsultasi penyakit dan gangguan saraf. Jam Layanan <b>Senin-Kamis Pukul 09.00-11.00.
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn shadow" style="background-color: #F4C51E" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                     </div>

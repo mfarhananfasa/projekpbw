@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Http\Controllers\PasienController;
-use RealRashid\SweetAlert\Facades\Alert;
 
 class UserAuthController extends Controller
 {
@@ -44,11 +43,9 @@ class UserAuthController extends Controller
                 PasienController::generateWaktu(9, 11, 15);
             }
 
-            alert()->success('Akun anda berhasil dibuat!','Silahkan login dengan akun tersebut.');
-
-            return redirect('/login');
+            return back()->with('success', 'Akun berhasil dibuat!');
         }else{
-            return back()->with('fail', 'Something wnet wrong');
+            return back()->with('fail', 'Ada kesalahan!');
         }
 
     }
