@@ -35,6 +35,7 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-block login">Login</button>
                 <div class="signup">Tidak memiliki akun? <a href="{{ url('register') }}">Buat akun</a></div>
+                <div class="signup">kembali ke <a href="{{ url('/') }}">Home</a></div>
             </div>
         </form>
     </div>
