@@ -30,7 +30,9 @@
                 <td>
                     <select name="jadwal">
                         @forelse ($times as $time)
-                            <option value="{{ $time->id }}">{{ $time->waktu }}</option>
+                            @if ($time->id_users == 0)
+                                <option value="{{ $time->id }}">{{ $time->waktu }}</option>
+                            @endif
                         @empty
                             Data tidak tersedia
                         @endforelse

@@ -52,6 +52,7 @@ class PasienController extends Controller
             'id_users' => Auth::user()->id,
         ]);
 
+        toast('Jadwal berhasil di-booking!','info');
         return redirect("/pasien");
     }
 

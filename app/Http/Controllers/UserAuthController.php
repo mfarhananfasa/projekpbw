@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Http\Controllers\PasienController;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserAuthController extends Controller
 {
@@ -43,7 +44,9 @@ class UserAuthController extends Controller
                 PasienController::generateWaktu(9, 11, 15);
             }
 
-            return redirect('/login')->with('success', 'You have been successfuly registered');
+            alert()->success('Akun anda berhasil dibuat!','Silahkan login dengan akun tersebut.');
+
+            return redirect('/login');
         }else{
             return back()->with('fail', 'Something wnet wrong');
         }
@@ -63,6 +66,7 @@ class UserAuthController extends Controller
             if(Hash::check($request->password, $user->password)){
 
                 //jika password cocok, redirect...
+                toast('Anda berhasil login!','success');
                 $request->session()->put('LoggedUser', $user->id);
 
                 return redirect('/');
@@ -89,6 +93,7 @@ class UserAuthController extends Controller
 
         if(session()->has('LoggedUser')){
             session()->pull('LoggedUser');
+            toast('Anda berhasil keluar!','success');
             return redirect('/');
         }
     }
