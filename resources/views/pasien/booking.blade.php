@@ -34,7 +34,7 @@
                                 <option value="{{ $time->id }}">{{ $time->waktu }}</option>
                             @endif
                         @empty
-                            Data tidak tersedia
+                            <p>Jadwal tidak tersedia</p>
                         @endforelse
                     </select>
                 </td>
