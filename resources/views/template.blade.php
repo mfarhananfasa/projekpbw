@@ -25,7 +25,7 @@
 
 <body>
     <!-- Navbar start -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: linear-gradient(#1aa4b8, #1a84b8)">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: linear-gradient(#1763a5, #125997)">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Praktek Dokter</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,8 +54,8 @@
             </form>
         @endauth
         @guest
-            <a href="{{ url('login') }}" class="btn btn-primary float-end shadow me-2">Login</a>
-            <a href="{{ url('register') }}" class="btn btn-secondary float-end shadow">Sign Up</a>
+            <a href="{{ url('login') }}" class="btn float-end shadow me-2" style="background-color: #45A8F6; color: white">Login</a>
+            <a href="{{ url('register') }}" class="btn float-end shadow" style="background-color: white; color: black">Sign Up</a>
         @endguest
     </div>
     </nav>
@@ -65,7 +65,7 @@
 
     <!-- ======= Footer ======= -->
     <footer>
-    <p>Kelompok 2 © 2021. All rights reserved</p>
+        <p>Kelompok 2 © 2021. All rights reserved</p>
     </footer>
     <!-- End Footer -->
 
@@ -82,9 +82,9 @@
     <script src="{{asset('dokter/assets/js/main.js')}}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+    @include('sweetalert::alert')
     <!-- CSS -->
-  <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" /> -->
+    <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" /> -->
 
 </body>
 </html>

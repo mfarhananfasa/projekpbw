@@ -8,7 +8,7 @@
         <h1>Tabel Pasien</h1>
 
         <form method="GET" action="/pasien" class="d-flex col-md-7 mb-3 mt-3">
-            <input name="search" class="form-control me-2" type="text" placeholder="Search" aria-label="Search" />
+            <input name="search" class="form-control me-2" type="text" placeholder="Search..." aria-label="Search" />
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
 
