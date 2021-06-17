@@ -54,7 +54,7 @@
             </form>
         @endauth
         @guest
-            <a href="{{ url('login') }}" class="btn btn-primary float-end shadow me-2">Login</a>
+            <a href="{{ url('login') }}" class="btn float-end shadow me-2" style="background-color: #45A8F6; color: white">Login</a>
             <a href="{{ url('register') }}" class="btn btn-light float-end shadow">Sign Up</a>
         @endguest
     </div>
