@@ -17,23 +17,28 @@
                 <h5 class="card-title"><b>dr. Edwin Ongkorahardjo</b></h5>
                 <p class="card-text">dr. Edwin Ongkorahardjo adalah seorang Dokter Spesialis neurologi.</p>
 
-                <!-- pop up 1-->
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Detail</button>
-                <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn shadow" style="background-color: #3CADFF; color: white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Detail
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
                     <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">dr. Edwin Ongkorahardjo</h4>
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">dr. Edwin Ongkorahardjo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Layanan kesehatan yang dapat beliau berikan berupa konsultasi penyakit dan gangguan saraf. Jam Layanan <b>Senin-Kamis Pukul 09.00-11.00.
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn shadow" style="background-color: #F4C51E" data-bs-dismiss="modal">Close</button>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <p>Layanan kesehatan yang dapat beliau berikan berupa konsultasi penyakit dan gangguan saraf. Jam Layanan <b>Senin-Kamis Pukul 09.00-11.00</b></p>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
-                    </div>
-                    </div>
-                </div>
                 </div>
             </div>
             </div>

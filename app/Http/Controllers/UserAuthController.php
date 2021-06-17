@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Http\Controllers\PasienController;
 
 class UserAuthController extends Controller
 {
@@ -36,29 +38,35 @@ class UserAuthController extends Controller
         $query          = $user->save();
 
         if($query){
-            return back()->with('success', 'You have been successfuly registered');
+
+            if(User::all()->count() == 1){
+                PasienController::generateWaktu(9, 11, 15);
+            }
+
+            return back()->with('success', 'Akun berhasil dibuat!');
         }else{
-            return back()->with('fail', 'Something wnet wrong');
+            return back()->with('fail', 'Ada kesalahan!');
         }
 
     }
 
     function check(Request $request){
         //Request Validasi
-        $request->validate([
+        $credentials = $request->validate([
             'username'=>'required',
             'password'=>'required|min:5|max:12'
         ]);
 
         //jika form validasi sukses
-
         $user = User::where('username','=', $request->username)->first();
-        if($user){
+        if(Auth::attempt($credentials)){
             if(Hash::check($request->password, $user->password)){
 
                 //jika password cocok, redirect...
+                toast('Anda berhasil login!','success');
                 $request->session()->put('LoggedUser', $user->id);
-                return redirect('welcome');
+
+                return redirect('/');
             }else{
                 return back()->with('fail', 'Invalid Password');
             }
@@ -74,13 +82,16 @@ class UserAuthController extends Controller
                 'LoggedUserInfo'=>$user
             ];
         }
-        return view('welcome');
+        return view('/');
     }
 
-    function logout(){
+    public function logout(){
+        Auth::logout();
+
         if(session()->has('LoggedUser')){
             session()->pull('LoggedUser');
-            return redirect('login');
+            toast('Anda berhasil keluar!','success');
+            return redirect('/');
         }
     }
 }

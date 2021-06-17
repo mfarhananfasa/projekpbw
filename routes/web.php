@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\PasienController;
+use App\Http\Controllers\DokterController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,28 +17,21 @@ use App\Http\Controllers\UserAuthController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('welcome', [UserAuthController::class, 'welcome'])->middleware('isLogged');
+Route::group(['middleware' => 'AlreadyLoggedIn'], function(){
+    Route::get('login', [UserAuthController::class, 'login']);
+    Route::get('register', [UserAuthController::class, 'register']);
 
-Route::get('dok', function () {
-    return view('dokter');
+    Route::post('create', [UserAuthController::class, 'create'])->name('auth.create');
+    Route::post('check', [UserAuthController::class, 'check'])->name('auth.check');
+
 });
 
-Route::get('pasien', function () {
-    return view('pasien');
+Route::group(['middleware' => 'isLogged'], function(){
+    Route::get('dok', [DokterController::class, 'index']);
+    Route::get('pasien', [PasienController::class, 'index']);
+    Route::post('booking', [PasienController::class, 'booking']);
+    Route::post('logout', [UserAuthController::class, 'logout']);
 });
-
-Route::get('login', [UserAuthController::class, 'login'])->middleware('AlreadyLoggedIn');
-
-Route::get('register', [UserAuthController::class, 'register'])->middleware('AlreadyLoggedIn');
-
-Route::get('logout', [UserAuthController::class, 'logout']);
-
-Route::post('create', [UserAuthController::class, 'create'])->name('auth.create');
-
-Route::post('check', [UserAuthController::class, 'check'])->name('auth.check');
-
 
