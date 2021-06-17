@@ -55,7 +55,7 @@
         @endauth
         @guest
             <a href="{{ url('login') }}" class="btn btn-primary float-end shadow me-2">Login</a>
-            <a href="{{ url('register') }}" class="btn btn-secondary float-end shadow">Sign Up</a>
+            <a href="{{ url('register') }}" class="btn btn-light float-end shadow">Sign Up</a>
         @endguest
     </div>
     </nav>
