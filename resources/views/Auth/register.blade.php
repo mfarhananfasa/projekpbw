@@ -66,6 +66,7 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-block create-account">Create Account</button>
                 <div class="signup">Sudah punya akun? <a href="{{ url('login') }}">Login</a></div>
+                <div class="signup">kembali ke <a href="{{ url('/') }}">Home</a></div>
             </div>
         </form>
 
