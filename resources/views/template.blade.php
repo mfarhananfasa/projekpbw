@@ -37,13 +37,13 @@
             <a class="nav-link" href="{{ url('/') }}">Home</a>
             </li>
             @auth
-            <li class="nav-item">
+                <li class="nav-item">
                 <a class="nav-link" href="{{ url('pasien') }}">Pasien</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="{{ url('dok') }}">Info dokter</a>
-                </li>
             @endauth
+            <li class="nav-item">
+            <a class="nav-link" href="{{ url('dok') }}">Info dokter</a>
+            </li>
             <li></li>
         </ul>
         </div>
