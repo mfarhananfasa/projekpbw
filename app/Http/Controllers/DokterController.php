@@ -8,11 +8,6 @@ use Illuminate\Support\Facades\Auth;
 class DokterController extends Controller
 {
     public function index() {
-        if(Auth::check()){
-            return view('dokter');
-        }
-        else{
-            return view('/');
-        }
+        return view('dokter');
     }
 }

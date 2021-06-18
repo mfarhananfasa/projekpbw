@@ -18,6 +18,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('dok', [DokterController::class, 'index']);
 
 Route::group(['middleware' => 'AlreadyLoggedIn'], function(){
     Route::get('login', [UserAuthController::class, 'login']);
@@ -29,7 +30,6 @@ Route::group(['middleware' => 'AlreadyLoggedIn'], function(){
 });
 
 Route::group(['middleware' => 'isLogged'], function(){
-    Route::get('dok', [DokterController::class, 'index']);
     Route::get('pasien', [PasienController::class, 'index']);
     Route::post('booking', [PasienController::class, 'booking']);
     Route::post('logout', [UserAuthController::class, 'logout']);
